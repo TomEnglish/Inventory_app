@@ -12,6 +12,86 @@ Two user roles:
 
 ---
 
+## How to Access the App (Step by Step)
+
+### What You Need
+- An iPhone or Android phone
+- The **Expo Go** app (free from App Store / Google Play)
+- Be on the **same WiFi network** as the person running the dev server
+
+### Step 1: Install Expo Go
+
+Download **Expo Go** from your phone's app store:
+- **iPhone**: Search "Expo Go" in the App Store
+- **Android**: Search "Expo Go" in Google Play
+
+![Install Expo Go from your app store](docs/images/01-install-expo-go.png)
+
+### Step 2: Scan the QR Code
+
+The person running the dev server will share a QR code (shown in their terminal).
+
+- **iPhone**: Open your normal Camera app and point it at the QR code. Tap the banner that appears to open in Expo Go.
+- **Android**: Open Expo Go and tap "Scan QR Code".
+
+![Scan the QR code from the terminal](docs/images/02-scan-qr-code.png)
+
+### Step 3: Wait for the App to Load
+
+The app will take 10-30 seconds to load the first time. You'll see a white screen with a loading indicator.
+
+![App loading screen](docs/images/03-app-loading.png)
+
+### Step 4: Login
+
+You'll see a login screen. Use one of these demo accounts:
+
+| Role | Email | Password |
+|---|---|---|
+| Field Worker | `field@demo.com` | `password123` |
+| Office Staff | `office@demo.com` | `password123` |
+
+Type the email and password, then tap **Sign In**.
+
+![Login screen with email and password fields](docs/images/04-login-screen.png)
+
+### Step 5: You're In!
+
+- **Field workers** see 3 tabs: Scan, Inventory, Activity
+- **Office staff** see 8 tabs: Dashboard, Materials, Exceptions, Locations, Scan, QR Codes, Activity, Reports
+
+![Field worker tabs](docs/images/05-field-tabs.png)
+![Office staff tabs](docs/images/06-office-tabs.png)
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| QR code won't scan | Make sure you're using Expo Go (Android) or the Camera app (iPhone) |
+| "Network request failed" | Make sure your phone is on the same WiFi as the dev server |
+| App won't load | The dev server may have stopped — ask the host to restart `npm run dev` |
+| Can't login | Check the email/password above. Passwords are case-sensitive. |
+
+---
+
+### How to Add Screenshots to This Document
+
+Team members with access to the repo can add screenshots:
+
+1. Take screenshots on your phone at each step above
+2. Transfer them to your computer (AirDrop, email, etc.)
+3. Name them to match the placeholders:
+   - `01-install-expo-go.png`
+   - `02-scan-qr-code.png`
+   - `03-app-loading.png`
+   - `04-login-screen.png`
+   - `05-field-tabs.png`
+   - `06-office-tabs.png`
+4. Put them in the `docs/images/` folder in the repo
+5. Commit and push — the images will appear in this document on GitHub
+
+---
+
 ## What We Need to Test
 
 ### Field Worker Flow
