@@ -204,6 +204,8 @@ const styles = StyleSheet.create({
     color: '#1E293B',
   },
   filterScroll: {
+    flexShrink: 0,
+    flexGrow: 0,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#E2E8F0',
@@ -214,7 +216,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
   },
-  filterButton: { paddingVertical: 8, paddingHorizontal: 16 },
+  filterButton: { flexShrink: 0, paddingVertical: 8, paddingHorizontal: 16 },
   list: { padding: 12, paddingBottom: 40 },
   card: {
     backgroundColor: '#fff',

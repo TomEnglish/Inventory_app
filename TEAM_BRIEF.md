@@ -21,28 +21,36 @@ Two user roles:
 
 ### Step 1: Install Expo Go
 
-Download **Expo Go** from your phone's app store:
-- **iPhone**: Search "Expo Go" in the App Store
-- **Android**: Search "Expo Go" in Google Play
+Download **Expo Go** from your phone's app store. Search "Expo Go" in the App Store (iPhone) or Google Play (Android).
 
-![Install Expo Go from your app store](docs/images/01-install-expo-go.png)
+![Expo Go in the App Store](docs/images/01-app-store-expo-go.png)
 
-### Step 2: Scan the QR Code
+Once installed, you'll see the Expo Go icon on your home screen:
+
+![Expo Go on home screen](docs/images/02-homescreen-expo-go.png)
+
+### Step 2: Open Expo Go
+
+Open Expo Go. You'll see the Development Servers screen. The app from the dev server will appear here automatically if you're on the same WiFi.
+
+![Expo Go home screen](docs/images/03-expo-go-home.png)
+
+### Step 3: Scan the QR Code
 
 The person running the dev server will share a QR code (shown in their terminal).
 
-- **iPhone**: Open your normal Camera app and point it at the QR code. Tap the banner that appears to open in Expo Go.
+- **iPhone**: Open your normal Camera app and point it at the QR code. Tap the "Open in Expo Go" banner.
 - **Android**: Open Expo Go and tap "Scan QR Code".
 
-![Scan the QR code from the terminal](docs/images/02-scan-qr-code.png)
+![Scanning the terminal QR code with iPhone camera](docs/images/04-scan-qr-code.png)
 
-### Step 3: Wait for the App to Load
+### Step 4: Wait for the App to Load
 
-The app will take 10-30 seconds to load the first time. You'll see a white screen with a loading indicator.
+The app will take 10-30 seconds to load the first time. You'll see the splash screen while the JavaScript bundle builds.
 
-![App loading screen](docs/images/03-app-loading.png)
+![App loading / splash screen](docs/images/05-app-loading.png)
 
-### Step 4: Login
+### Step 5: Login
 
 You'll see a login screen. Use one of these demo accounts:
 
@@ -53,15 +61,12 @@ You'll see a login screen. Use one of these demo accounts:
 
 Type the email and password, then tap **Sign In**.
 
-![Login screen with email and password fields](docs/images/04-login-screen.png)
+![Login screen](docs/images/06-login-screen.png)
 
-### Step 5: You're In!
+### Step 6: You're In!
 
 - **Field workers** see 3 tabs: Scan, Inventory, Activity
 - **Office staff** see 8 tabs: Dashboard, Materials, Exceptions, Locations, Scan, QR Codes, Activity, Reports
-
-![Field worker tabs](docs/images/05-field-tabs.png)
-![Office staff tabs](docs/images/06-office-tabs.png)
 
 ### Troubleshooting
 
@@ -74,21 +79,57 @@ Type the email and password, then tap **Sign In**.
 
 ---
 
-### How to Add Screenshots to This Document
+## App Screenshots
 
-Team members with access to the repo can add screenshots:
+### Office Staff Views
 
-1. Take screenshots on your phone at each step above
-2. Transfer them to your computer (AirDrop, email, etc.)
-3. Name them to match the placeholders:
-   - `01-install-expo-go.png`
-   - `02-scan-qr-code.png`
-   - `03-app-loading.png`
-   - `04-login-screen.png`
-   - `05-field-tabs.png`
-   - `06-office-tabs.png`
-4. Put them in the `docs/images/` folder in the repo
-5. Commit and push — the images will appear in this document on GitHub
+**Dashboard** — KPI cards, inventory by type chart, and yard overview:
+
+![Office Dashboard](docs/images/07-office-dashboard.png)
+
+**Materials** — Search and filter materials by status. Tap any material to edit:
+
+![Office Materials](docs/images/08-office-materials.png)
+
+**Exceptions** — Review flagged items (wrong type, wrong count, damage). Resolve with Hold or Return to Vendor:
+
+![Office Exceptions](docs/images/09-office-exceptions.png)
+
+**Locations** — Browse all yard locations. Add new zones/rows/racks:
+
+![Office Locations](docs/images/10-office-locations.png)
+
+**QR Codes** — View all QR codes (linked and available). Generate batches and print labels:
+
+![Office QR Codes](docs/images/11-office-qr-codes.png)
+
+**QR Print Preview** — AirPrint labels directly from the app:
+
+![QR Print Preview](docs/images/12-qr-print-preview.png)
+
+**Reports** — Inventory and Aging reports with Export CSV:
+
+![Office Reports](docs/images/13-office-reports.png)
+
+### Field Worker Views
+
+**Scan** — Camera-based QR scanner with manual entry fallback. Field workers see 3 tabs: Scan, Inventory, Activity:
+
+![Field Scan with manual entry](docs/images/15-field-tabs.PNG)
+
+**Inventory** — Browse all materials, filter by status, tap for detail/transfer/issue:
+
+![Field Inventory](docs/images/16-field-inventory.PNG)
+
+**Activity** — Recent actions by this user (receiving, transfers, issues):
+
+![Field Activity](docs/images/17-field-scan.PNG)
+
+### Receiving Wizard (Both Roles)
+
+**Step 1: Material Details** — Select material type, quantity, size, grade, weight:
+
+![Receiving Wizard — Material Details](docs/images/14-receiving-wizard.png)
 
 ---
 

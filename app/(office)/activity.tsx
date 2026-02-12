@@ -17,10 +17,9 @@ export default function ActivityScreen() {
   const [loading, setLoading] = useState(true);
 
   const load = async () => {
-    if (!user) return;
     setLoading(true);
     try {
-      const data = await fetchRecentActivity(user.id);
+      const data = await fetchRecentActivity();
       setItems(data);
     } catch (e: any) {
       Alert.alert('Error', e.message);
@@ -31,7 +30,7 @@ export default function ActivityScreen() {
   useFocusEffect(
     useCallback(() => {
       load();
-    }, [user?.id])
+    }, [])
   );
 
   const formatTime = (dateStr: string) => {
