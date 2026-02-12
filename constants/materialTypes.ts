@@ -1,0 +1,48 @@
+export const MATERIAL_TYPES = [
+  'Pipe',
+  'Fitting',
+  'Valve',
+  'Flange',
+  'Structural Steel',
+  'Plate',
+  'Tubing',
+  'Bolt/Fastener',
+  'Gasket',
+  'Electrical',
+  'Instrumentation',
+  'Other',
+] as const;
+
+export const GRADES = [
+  'A105',
+  'A106 Gr B',
+  'A312 TP304',
+  'A312 TP316',
+  'A333 Gr 6',
+  'A350 LF2',
+  'A516 Gr 70',
+  'B16',
+  'Other',
+] as const;
+
+export const SIZES = [
+  '1/2"',
+  '3/4"',
+  '1"',
+  '1-1/2"',
+  '2"',
+  '3"',
+  '4"',
+  '6"',
+  '8"',
+  '10"',
+  '12"',
+  '14"',
+  '16"',
+  '18"',
+  '20"',
+  '24"',
+  '30"',
+  '36"',
+  'Other',
+] as const;
