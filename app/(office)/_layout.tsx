@@ -54,11 +54,29 @@ export default function OfficeLayout() {
           }}
         />
         <Tabs.Screen
+          name="scan"
+          options={{
+            title: 'Scan',
+            tabBarIcon: ({ color }) => (
+              <FontAwesome name="camera" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
           name="qr-codes"
           options={{
             title: 'QR Codes',
             tabBarIcon: ({ color }) => (
               <FontAwesome name="qrcode" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="activity"
+          options={{
+            title: 'Activity',
+            tabBarIcon: ({ color }) => (
+              <FontAwesome name="history" size={24} color={color} />
             ),
           }}
         />
@@ -69,6 +87,13 @@ export default function OfficeLayout() {
             tabBarIcon: ({ color }) => (
               <FontAwesome name="bar-chart" size={24} color={color} />
             ),
+          }}
+        />
+        <Tabs.Screen
+          name="receiving"
+          options={{
+            href: null,
+            headerShown: false,
           }}
         />
       </Tabs>

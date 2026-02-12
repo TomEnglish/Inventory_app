@@ -4,6 +4,7 @@ import {
   Text,
   TextInput,
   FlatList,
+  ScrollView,
   StyleSheet,
   TouchableOpacity,
   RefreshControl,
@@ -115,17 +116,19 @@ export default function InventoryScreen() {
         />
       </View>
 
-      <View style={styles.filterRow}>
-        {STATUS_FILTERS.map((f) => (
-          <Button
-            key={f.value}
-            title={f.label}
-            variant={statusFilter === f.value ? 'primary' : 'secondary'}
-            onPress={() => setStatusFilter(f.value)}
-            style={styles.filterButton}
-          />
-        ))}
-      </View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll}>
+        <View style={styles.filterRow}>
+          {STATUS_FILTERS.map((f) => (
+            <Button
+              key={f.value}
+              title={f.label}
+              variant={statusFilter === f.value ? 'primary' : 'secondary'}
+              onPress={() => setStatusFilter(f.value)}
+              style={styles.filterButton}
+            />
+          ))}
+        </View>
+      </ScrollView>
 
       <FlatList
         data={materials}
@@ -160,16 +163,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#1E293B',
   },
-  filterRow: {
-    flexDirection: 'row',
-    gap: 6,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+  filterScroll: {
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#E2E8F0',
   },
-  filterButton: { flex: 1, paddingVertical: 6, paddingHorizontal: 4 },
+  filterRow: {
+    flexDirection: 'row',
+    gap: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  filterButton: { paddingVertical: 8, paddingHorizontal: 16 },
   list: { padding: 12, paddingBottom: 40 },
   card: {
     backgroundColor: '#fff',

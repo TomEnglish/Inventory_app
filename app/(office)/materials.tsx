@@ -210,11 +210,11 @@ const styles = StyleSheet.create({
   },
   filterRow: {
     flexDirection: 'row',
-    gap: 6,
+    gap: 8,
     paddingHorizontal: 12,
     paddingVertical: 8,
   },
-  filterButton: { paddingVertical: 6, paddingHorizontal: 14 },
+  filterButton: { paddingVertical: 8, paddingHorizontal: 16 },
   list: { padding: 12, paddingBottom: 40 },
   card: {
     backgroundColor: '#fff',

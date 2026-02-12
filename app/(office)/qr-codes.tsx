@@ -72,23 +72,24 @@ export default function QRCodesScreen() {
   const handlePrintLabels = async (codes: QRCodeRecord[]) => {
     setPrinting(true);
     try {
-      // Generate QR code data URLs
-      const qrImages = await Promise.all(
+      // Generate QR code SVGs
+      const qrSvgs = await Promise.all(
         codes.map(async (code) => {
-          const dataUrl = await QRCode.toDataURL(code.code_value, {
-            width: 200,
+          const svg = await QRCode.toString(code.code_value, {
+            type: 'svg',
+            width: 150,
             margin: 1,
           });
-          return { code: code.code_value, dataUrl };
+          return { code: code.code_value, svg };
         })
       );
 
       // Build printable HTML
-      const labelsHtml = qrImages
+      const labelsHtml = qrSvgs
         .map(
           (item) => `
         <div class="label">
-          <img src="${item.dataUrl}" />
+          ${item.svg}
           <p>${item.code}</p>
         </div>
       `
@@ -108,7 +109,7 @@ export default function QRCodesScreen() {
                 padding: 10px;
                 page-break-inside: avoid;
               }
-              .label img { width: 150px; height: 150px; }
+              .label svg { width: 150px; height: 150px; }
               .label p { font-size: 10px; margin: 4px 0 0; word-break: break-all; }
             </style>
           </head>
