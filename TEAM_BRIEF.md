@@ -306,6 +306,68 @@ For each new client:
 
 ---
 
+## Product Development Roadmap
+
+Features planned for upcoming releases, in priority order.
+
+### 1. Photo Gallery on Material & Exception Detail
+
+**Status:** Planned
+
+Photos are captured during receiving but currently can't be viewed afterward. This feature adds:
+- Photo thumbnails on the material detail screen (tap to view full-screen)
+- Damage photos shown on the exceptions screen during review
+- Photos tagged by type: General, Damage, Delivery Ticket
+
+**Why it matters:** The whole point of taking inspection photos is referencing them later — during vendor disputes, insurance claims, audits, or when resolving exceptions. Without this, photo capture is wasted effort. Office staff need to see damage before deciding Hold vs Return to Vendor.
+
+---
+
+### 2. Push Notifications & Email Alerts
+
+**Status:** Planned
+
+Currently, when a field worker flags an exception, office staff have no idea until they open the app. This feature adds real-time alerts:
+- Exception flagged → push notification to office staff
+- Material aging past 30/90 days → daily email digest
+- Shipment completed → notification to originator
+- Low quantity threshold → alert to admin
+
+Delivered via Expo Push Notifications and/or email (Supabase Edge Function).
+
+**Why it matters:** Turns the app from "check when you remember" into "alerts you when it matters." Exceptions get resolved in hours instead of days. Critical for time-sensitive materials and vendor dispute windows.
+
+---
+
+### 3. User Management Screen (Admin)
+
+**Status:** Planned
+
+Currently, adding or removing users requires running SQL in the Supabase dashboard. This feature adds an admin-only screen to:
+- View all users (name, email, role, last active)
+- Invite new user (creates auth account + user record)
+- Change roles (field_worker ↔ office_staff)
+- Deactivate users (disable login without deleting history)
+
+**Why it matters:** Makes the app self-service for clients. Site managers can onboard new workers on day one and revoke access when people leave — without calling us. This is a requirement for any multi-client deployment.
+
+---
+
+### 4. Cycle Count / Physical Inventory Verification
+
+**Status:** Planned
+
+No way to verify that system inventory matches physical inventory. Over time, discrepancies accumulate from missed scans, damaged items, or theft. This feature adds:
+- Office staff initiates a cycle count for a location or zone
+- Field workers scan each item in that area
+- System compares scanned items vs expected items
+- Discrepancy report: missing, unexpected, quantity mismatch
+- Discrepancies can be resolved or flagged for investigation
+
+**Why it matters:** This is the feature that separates a "nice app" from a "serious inventory system." Every auditor and site manager asks "how do I know this is accurate?" Cycle counts are the answer. It's also a recurring activity that drives daily app usage.
+
+---
+
 ## Questions? Issues?
 
 - App bugs or feature requests: file in the GitHub repo

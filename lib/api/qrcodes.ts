@@ -41,6 +41,28 @@ export async function batchCreateQRCodes(count: number): Promise<QRCodeRecord[]>
   return (data ?? []) as QRCodeRecord[];
 }
 
+// Look up a QR code by its value and return linked material ID if any
+export async function lookupMaterialByQR(codeValue: string): Promise<{ materialId: string } | null> {
+  // Find the QR code record
+  const { data: qr } = await supabase
+    .from('qr_codes')
+    .select('id')
+    .eq('code_value', codeValue)
+    .single();
+
+  if (!qr) return null;
+
+  // Find a material linked to this QR code
+  const { data: mat } = await supabase
+    .from('materials')
+    .select('id')
+    .eq('qr_code_id', qr.id)
+    .single();
+
+  if (!mat) return null;
+  return { materialId: mat.id };
+}
+
 export async function fetchQRCodeDetail(id: string) {
   const { data: qr, error } = await supabase
     .from('qr_codes')
